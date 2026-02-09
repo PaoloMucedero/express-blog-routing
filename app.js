@@ -8,11 +8,6 @@ const postsRouter = require("./routers/posts");
 app.use(express.static("public"));
 // devio gestione richieste su file routers/posts.js
 app.use("/posts", postsRouter);
-// rotta home page
-app.get("/", (req, res) => {
-    res.send("<h1>Home Route app Blog</h1>")
-})
-
 // Routing tramite express - vedi file posts.js
 
 

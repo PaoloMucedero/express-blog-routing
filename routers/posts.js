@@ -2,9 +2,18 @@
 const express = require("express");
 const router = express.Router();
 
+// UTILIZZO IL FILE CHE CONTIENE L'ARRAY DI OGGETTI
+const postsList = require(`./../data/posts`)
+
 // INDEX → lista di tutti i post
 router.get("/", (req, res) => {
-  res.send("Lista dei post");
+  const oggettoListaPost = {
+    numeroPost: postsList.length,
+    listaPost: postsList
+  };
+  
+  res.json(postsList)
+  //res.send("Lista dei post");
 });
 
 // SHOW → dettaglio di un singolo post
